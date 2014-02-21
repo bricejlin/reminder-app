@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>RemindMe</title>
+    <link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div id="reminder-container"></div>
+
+    <!-- Backbone templates -->
+    <script type="text/template" id="reminder_template">
+      <label>Alert me every <input type="text" id="reminder-input" /> minutes</label>
+      <button id="remind-btn">Remind Me</button>
+    </script>
+
+    <!-- Libraries -->
+    <script src="js/vendors/jquery.js"></script>
+    <script src="js/vendors/underscore.js"></script>
+    <script src="js/vendors/backbone.js"></script>
+
+    <!-- Backbone scripts -->
+    <script src="js/views/reminder-view.js"></script>
+    <script>
+      var reminderView = new ReminderView({ 
+        el: $('#reminder-container') 
+      });
+    </script>
+  </body>
+</html>
