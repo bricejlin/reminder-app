@@ -22,6 +22,6 @@ ReminderView = Backbone.View.extend({
     }, interval);
 
     // Log confirmation for interval in minutes
-    console.log('Great! Will remind you every ' + interval/60000 + ' minutes!');
+    $('#remind-btn').replaceWith('<p>Great! Will remind you every ' + interval/60000 + ' minutes!</p>');
   }
 });

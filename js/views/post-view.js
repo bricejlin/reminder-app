@@ -3,7 +3,7 @@ PostView = Backbone.View.extend({
     this.render();
   },
   render: function() {
-    var template = _.template( $('#post-template').html() );
+    var template = _.template( $('#post-input-template').html() );
 
     this.$el.html(template);
   },
@@ -16,5 +16,7 @@ PostView = Backbone.View.extend({
 
     $('#posts').append(
       '<div class="post">' + postTitle + postContent + '</div>');
+    $('#post-title-input').val('');
+    $('#post-content-input').val('');
   }
 })

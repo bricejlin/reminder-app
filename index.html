@@ -1,34 +1,58 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RemindMe</title>
     <link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="css/remindme.css">
   </head>
   <body>
-    <div id="container">
-      <div id="reminder-container"></div>
-
-      <a href="#/posts/4"><button>Click me (post)</button></a>
-      <a href="#/posdts/4"><button>Click me (post)</button></a>
-      <a href="#/anything"><button>Click me (anything)</button></a>
-      
-      <div id="post-container">
-        <div id="post-form"></div>
-        <div id="posts"></div>
-      </div>
+    <div class="container">
+      <section class="jumbotron">
+        <h1>RemindMe</h1>
+        <div id="reminder-container"></div>
+      </section>
+      <section id="post-app">
+        <header id="header">
+          <h1>posts</h1>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="input-group">
+                <span class="input-group-addon">Title</span>
+                <input type="text" id="post-title-input" class="form-control">
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-12 -->
+            <div class="col-lg-12">
+              <div class="input-group">
+                <span class="input-group-addon">Content</span>
+                <textarea type="text" id="post-content-input" class="form-control"></textarea>
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-12 -->
+          </div><!-- /.row -->
+        </header>
+        <section id="posts"></section>
+        <button id="post-btn" class="btn">Submit Post</button>
+        <footer id="info"></footer>
+      </section>
     </div>
     <!-- Backbone templates -->
     <script type="text/template" id="reminder-template">
+      <p>
       <label>Alert me every <input type="text" id="reminder-input" /> minutes</label>
-      <button id="remind-btn">Remind Me</button>
+      </p>
+      <p>
+        <button id="remind-btn" class="btn btn-lg btn-success">Remind Me</button>
+      </p>
     </script>
 
     <script type="text/template" id="post-template">
-      <label>Add a post!</label>
-      <input type="text" id="post-title-input"/>
-      <input type="text" id="post-content-input"/>
-      <button id="add-post-btn">Add post</button>
+      <div class="post">
+        <h1><%= title %></h1>
+        <p><%= content %></p>
+        <button class="destroy"></button>
+      </div>
     </script>
 
     <!-- Libraries -->
@@ -69,7 +93,7 @@
 
     <script src="js/views/reminder-view.js"></script>
     <script src="js/views/post-view.js"></script>
-    
+
     <script>
       var reminderView = new ReminderView({ 
         el: $('#reminder-container') 
