@@ -4,7 +4,7 @@ ReminderView = Backbone.View.extend({
   },
   render: function() {
     // Compile the template using underscore
-    var template = _.template( $('#reminder_template').html() );
+    var template = _.template( $('#reminder-template').html() );
     // Load the compiled HTML into the Backbone 'el'
     this.$el.html(template);
   },
