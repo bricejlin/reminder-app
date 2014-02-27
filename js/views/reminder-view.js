@@ -21,7 +21,7 @@ ReminderView = Backbone.View.extend({
       alert(interval/60000 + ' minutes up! Time for 20 second break!!');
     }, interval);
 
-    // Log confirmation for interval in minutes
-    $('#remind-btn').replaceWith('<p>Great! Will remind you every ' + interval/60000 + ' minute' + (interval/60000 === 1 ? '' : 's') + '!</p>');
+    // Replace template with confirmation for interval in minutes
+    this.$el.replaceWith('<p>Great! Will remind you every ' + interval/60000 + ' minute' + (interval/60000 === 1 ? '' : 's') + '!</p>');
   }
 });
