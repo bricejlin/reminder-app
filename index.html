@@ -18,11 +18,12 @@
     <!-- Backbone templates -->
     <script type="text/template" id="reminder-template">
       <p>
-      <label>Alert me every <input type="text" id="reminder-input" /> minutes</label>
+        <label>Alert me every <input type="text" id="reminder-input" title="Default is 20" /> minutes</label>
       </p>
       <p>
         <button id="remind-btn" class="btn btn-lg btn-success">Remind Me</button>
       </p>
+      <p id="note">(Default is 20)</p>
     </script>
 
     <script type="text/template" id="post-template">
@@ -39,7 +40,7 @@
     <script src="js/vendors/backbone.js"></script>
 
     <!-- Backbone scripts -->
-    <!-- 
+    <!--
     order:
     models
     collections
@@ -73,8 +74,8 @@
     <script src="js/views/post-view.js"></script>
 
     <script>
-      var reminderView = new ReminderView({ 
-        el: $('#reminder-container') 
+      var reminderView = new ReminderView({
+        el: $('#reminder-container')
       });
       var postView = new PostView({
         el: $('#post-form')
