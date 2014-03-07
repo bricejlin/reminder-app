@@ -18,7 +18,17 @@ ReminderView = Backbone.View.extend({
 
     // Set alert interval
     setInterval(function() {
+
       alert(interval/60000 + ' minutes up! Time for 20 second break!!');
+
+      $('.container').toggleClass('blackout');
+      $('.jumbotron').toggleClass('blackout');
+
+      setTimeout(function() {
+        $('.container').toggleClass('blackout');
+        $('.jumbotron').toggleClass('blackout');
+      }, 20000);
+
     }, interval);
 
     // Replace template with confirmation for interval in minutes
