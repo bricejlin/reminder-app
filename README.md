@@ -1,8 +1,9 @@
-A reminder app that alerts a user on a customizable interval to look away from the screen.
+A reminder app that alerts a user on a customizable interval to rest his/her eyes and look away from the screen.
 
+How to use:
+Download zip and open index.html page.
+
+Download 
 To do:
-- Short Term
-  - Change button to confirmation text
-
 - Long Term
   - Can change interval without reloading page
